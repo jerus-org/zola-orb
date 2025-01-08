@@ -7,8 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- chore-Configure Renovate(pr [#1])
+
 ### Fixed
 
 - circleci: update vcs_type to github in config and test-deploy files(pr [#2])
 
 [#2]: https://github.com/jerus-org/zola-orb/pull/2
+[#1]: https://github.com/jerus-org/zola-orb/pull/1
