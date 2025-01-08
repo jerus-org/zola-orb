@@ -15,5 +15,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - circleci: update vcs_type to github in config and test-deploy files(pr [#2])
 
+### Security
+
+- Dependencies: pin dependencies(pr [#3])
+
 [#2]: https://github.com/jerus-org/zola-orb/pull/2
 [#1]: https://github.com/jerus-org/zola-orb/pull/1
+[#3]: https://github.com/jerus-org/zola-orb/pull/3
