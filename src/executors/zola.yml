@@ -1,0 +1,9 @@
+description: >
+  The jerus-org zola executor pre-configured with the zola version 
+  as indicated in the version tag.
+docker:
+  - image: jerusdp/ci-zola:<<parameters.zola_version>>
+parameters:
+  zola_version:
+    description: "The version of the zola to use"
+    type: string
