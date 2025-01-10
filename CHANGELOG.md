@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - chore(ci)-remove hardcoded version from CircleCI config(pr [#9])
 
+### Fixed
+
+- examples: update zola orb version in example.yml(pr [#10])
+
 ## [1.0.0] - 2025-01-10
 
 ### Added
@@ -40,5 +44,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [#7]: https://github.com/jerus-org/zola-orb/pull/7
 [#8]: https://github.com/jerus-org/zola-orb/pull/8
 [#9]: https://github.com/jerus-org/zola-orb/pull/9
+[#10]: https://github.com/jerus-org/zola-orb/pull/10
 [Unreleased]: https://github.com/jerus-org/zola-orb/compare/v1.0.0...HEAD
 [1.0.0]: https://github.com/jerus-org/zola-orb/releases/tag/v1.0.0
