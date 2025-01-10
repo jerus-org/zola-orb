@@ -75,7 +75,6 @@ workflows:
             - release
           ssh_fingerprint: << pipeline.parameters.fingerprint >>
           min_rust_version: << pipeline.parameters.min_rust_version >>
-          pcu_verbosity: "-vvvv"
 
       # The orb must be re-packed for publishing, and saved to the workspace.
 
