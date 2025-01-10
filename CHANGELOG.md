@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - chore-Configure Renovate(pr [#1])
 - chore-update example.yml to use zola orb and configure workspace steps(pr [#7])
+- ci(circleci)-set version to 1.0.0 for save_next_version job in workflows(pr [#8])
 
 ### Fixed
 
@@ -31,3 +32,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [#5]: https://github.com/jerus-org/zola-orb/pull/5
 [#6]: https://github.com/jerus-org/zola-orb/pull/6
 [#7]: https://github.com/jerus-org/zola-orb/pull/7
+[#8]: https://github.com/jerus-org/zola-orb/pull/8
