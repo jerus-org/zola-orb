@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - add zola executor configuration file(pr [#5])
+- add build job configuration using zola(pr [#6])
 
 ### Changed
 
@@ -27,3 +28,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [#1]: https://github.com/jerus-org/zola-orb/pull/1
 [#3]: https://github.com/jerus-org/zola-orb/pull/3
 [#5]: https://github.com/jerus-org/zola-orb/pull/5
+[#6]: https://github.com/jerus-org/zola-orb/pull/6
