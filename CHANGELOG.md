@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - chore-Configure Renovate(pr [#1])
+- chore-update example.yml to use zola orb and configure workspace steps(pr [#7])
 
 ### Fixed
 
@@ -29,3 +30,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [#3]: https://github.com/jerus-org/zola-orb/pull/3
 [#5]: https://github.com/jerus-org/zola-orb/pull/5
 [#6]: https://github.com/jerus-org/zola-orb/pull/6
+[#7]: https://github.com/jerus-org/zola-orb/pull/7
