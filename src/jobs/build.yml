@@ -4,6 +4,7 @@ description: >
 executor:
   name: zola
   zola_version: <<parameters.zola_version>>
+
 parameters:
   zola_version:
     type: string
@@ -12,11 +13,16 @@ parameters:
     type: boolean
     default: true
     description: "If true, the git submodules will be updated."
+
 steps:
   - checkout
-  - when: << parameters.update_submodules >>
-    steps:
-      - run: git submodule sync
-      - run: git submodule update --init
+
+  - when:
+      condition: << parameters.update_submodules >>
+      steps:
+        - run: git submodule sync
+        - run: git submodule update --init
+
   - run: zola --version
+
   - run: zola build
