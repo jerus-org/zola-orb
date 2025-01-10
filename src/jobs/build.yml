@@ -21,21 +21,21 @@ steps:
       condition: << parameters.update_submodules >>
       steps:
         - run:
-          name: Sync git submodules
-          command: |
-            git submodule sync
+            name: Sync git submodules
+            command: |
+              git submodule sync
 
         - run:
-          name: Update git submodules
-          command: |
-            git submodule update --init
+            name: Update git submodules
+            command: |
+              git submodule update --init
 
   - run:
-    name: Confirm zola version
-    command: |
-      zola --version
+      name: Confirm zola version
+      command: |
+        zola --version
 
   - run:
-    name: Build site
-    command: |
-      zola build
+      name: Build site
+      command: |
+        zola build
