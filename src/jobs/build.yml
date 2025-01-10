@@ -31,11 +31,11 @@ steps:
             git submodule update --init
 
   - run:
-      name: Confirm zola version
-      command: |
-        zola --version
+    name: Confirm zola version
+    command: |
+      zola --version
 
   - run:
-      name: Build site
-      command: |
-        zola build
+    name: Build site
+    command: |
+      zola build
