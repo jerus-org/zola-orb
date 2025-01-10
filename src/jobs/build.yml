@@ -24,6 +24,7 @@ steps:
           name: Sync git submodules
           command: |
             git submodule sync
+
         - run:
           name: Update git submodules
           command: |
@@ -36,4 +37,5 @@ steps:
 
   - run:
       name: Build site
+      command: |
         zola build
