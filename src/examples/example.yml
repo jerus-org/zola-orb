@@ -6,8 +6,16 @@ description: >
 usage:
   version: 2.1
   orbs:
-    <orb-name>: <namespace>/<orb-name>@1.2.3
+    zola: jerus-org/zola@1.2.3
   workflows:
     use-my-orb:
       jobs:
-        - <orb-name>/<job-name>
+        - zola/build:
+            pre-steps:
+              - attach_workspace:
+                  at: /home/circleci/
+            post-steps:
+              - persist_to_workspace:
+                  root: /home/circleci/
+                  paths:
+                    - project/public
