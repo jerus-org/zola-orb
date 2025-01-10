@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- add zola executor configuration file(pr [#5])
+
 ### Changed
 
 - chore-Configure Renovate(pr [#1])
@@ -22,3 +26,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [#2]: https://github.com/jerus-org/zola-orb/pull/2
 [#1]: https://github.com/jerus-org/zola-orb/pull/1
 [#3]: https://github.com/jerus-org/zola-orb/pull/3
+[#5]: https://github.com/jerus-org/zola-orb/pull/5
