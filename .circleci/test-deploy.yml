@@ -59,7 +59,6 @@ jobs:
     steps:
       - checkout
       # Run your orb's commands to validate them.
-      - zola-orb/greet
 workflows:
   test-deploy:
     jobs:
