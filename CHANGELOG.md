@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.0.0] - 2025-01-11
+## [Unreleased]
 
 ### Added
 
@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - circleci: update vcs_type to github in config and test-deploy files(pr [#2])
 - examples: update zola orb version in example.yml(pr [#10])
+- update changelog and example config for upcoming release(pr [#12])
 
 ### Security
 
@@ -39,4 +40,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [#9]: https://github.com/jerus-org/zola-orb/pull/9
 [#10]: https://github.com/jerus-org/zola-orb/pull/10
 [#11]: https://github.com/jerus-org/zola-orb/pull/11
-[1.0.0]: https://github.com/jerus-org/zola-orb/releases/tag/v1.0.0
+[#12]: https://github.com/jerus-org/zola-orb/pull/12
