@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Changed
+
+- chore-update orb name and version in config and example files(pr [#13])
+
 ## [1.0.0] - 2025-01-11
 
 ### Added
@@ -41,4 +47,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [#10]: https://github.com/jerus-org/zola-orb/pull/10
 [#11]: https://github.com/jerus-org/zola-orb/pull/11
 [#12]: https://github.com/jerus-org/zola-orb/pull/12
+[#13]: https://github.com/jerus-org/zola-orb/pull/13
+[Unreleased]: https://github.com/jerus-org/zola-orb/compare/v1.0.0...HEAD
 [1.0.0]: https://github.com/jerus-org/zola-orb/releases/tag/v1.0.0
