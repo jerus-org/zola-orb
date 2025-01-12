@@ -81,7 +81,7 @@ workflows:
       - orb-tools/pack:
           filters: *release-filters
       - orb-tools/publish:
-          orb_name: jerus-org/zola-orb
+          orb_name: jerus-org/zola
           vcs_type: github
           pub_type: production
           # Ensure this job requires all test jobs and the pack job.
