@@ -56,7 +56,7 @@ workflows:
       - orb-tools/pack:
           filters: *filters
       - orb-tools/review:
-          orb_name: zola-orb
+          orb_name: zola
           filters: *filters
       - shellcheck/check:
           filters: *filters
@@ -64,7 +64,7 @@ workflows:
       - orb-tools/continue:
           pipeline_number: << pipeline.number >>
           vcs_type: github
-          orb_name: zola-orb
+          orb_name: zola
           requires:
             [orb-tools/lint, orb-tools/pack, orb-tools/review, shellcheck/check]
           filters: *filters

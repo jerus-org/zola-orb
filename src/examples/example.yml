@@ -6,7 +6,7 @@ description: >
 usage:
   version: 2.1
   orbs:
-    zola: jerus-org/zola@1
+    zola: jerus-org/zola@1.0
   workflows:
     use-my-orb:
       jobs:
