@@ -7,12 +7,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Changed
-
-- chore-update orb name and version in config and example files(pr [#13])
-
-## [1.0.0] - 2025-01-11
-
 ### Added
 
 - add zola executor configuration file(pr [#5])
@@ -25,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - ci(circleci)-set version to 1.0.0 for save_next_version job in workflows(pr [#8])
 - chore(ci)-remove hardcoded version from CircleCI config(pr [#9])
 - ci(circleci)-set version 1.0.0 for save_next_version job in config file(pr [#11])
+- chore-update orb name and version in config and example files(pr [#13])
 
 ### Fixed
 
@@ -49,4 +44,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [#12]: https://github.com/jerus-org/zola-orb/pull/12
 [#13]: https://github.com/jerus-org/zola-orb/pull/13
 [Unreleased]: https://github.com/jerus-org/zola-orb/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/jerus-org/zola-orb/releases/tag/v1.0.0
