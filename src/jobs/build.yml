@@ -13,6 +13,10 @@ parameters:
     type: boolean
     default: true
     description: "If true, the git submodules will be updated."
+  list_directory:
+    type: boolean
+    default: false
+    description: "If true, list the directory after the update."
 
 steps:
   - checkout
@@ -39,3 +43,12 @@ steps:
       name: Build site
       command: |
         zola build
+
+  - when:
+      condition: << parameters.list_directory >>
+      steps:
+        - run:
+            name: List directory contents
+            command: |
+              pwd
+              ls -la
