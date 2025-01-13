@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - add option to list directory contents after submodule update(pr [#15])
 
+### Changed
+
+- chore(ci)-remove hardcoded version from CircleCI config(pr [#16])
+
 ## [1.0.0] - 2025-01-12
 
 ### Added
@@ -52,5 +56,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [#13]: https://github.com/jerus-org/zola-orb/pull/13
 [#14]: https://github.com/jerus-org/zola-orb/pull/14
 [#15]: https://github.com/jerus-org/zola-orb/pull/15
+[#16]: https://github.com/jerus-org/zola-orb/pull/16
 [Unreleased]: https://github.com/jerus-org/zola-orb/compare/v1.0.0...HEAD
 [1.0.0]: https://github.com/jerus-org/zola-orb/releases/tag/v1.0.0
