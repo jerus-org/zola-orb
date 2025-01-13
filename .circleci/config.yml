@@ -102,7 +102,6 @@ workflows:
     jobs:
       - toolkit/save_next_version:
           min_rust_version: << pipeline.parameters.min-rust-version >>
-          version: 1.0.0
 
       - toolkit/make_release:
           min_rust_version: << pipeline.parameters.min-rust-version >>
