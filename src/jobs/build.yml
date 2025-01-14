@@ -17,7 +17,7 @@ parameters:
     type: boolean
     default: false
     description: "If true, list the directory after the update."
-  output_directory:
+  output:
     type: string
     default: ""
     description: "If true, list the directory after the update."
@@ -46,7 +46,7 @@ steps:
   - run:
       name: Export OUTPUT_DIRECTORY
       command: |
-        echo "export OUTPUT_DIRECTORY=<< parameters.output_directory >>" >> "$BASH_ENV"
+        echo "export OD=<< parameters.output_dir >>" >> "$BASH_ENV"
 
   - run:
       name: Build site
