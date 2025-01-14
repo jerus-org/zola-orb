@@ -1,6 +1,6 @@
 # Zola Orb
 
-[![CircleCI Build Status](https://circleci.com/gh/jerus-org/zola-orb.svg?style=shield "CircleCI Build Status")](https://circleci.com/gh/jerus-org/zola-orb) [![CircleCI Orb Version](https://badges.circleci.com/orbs/jerus-org/zola-orb.svg)](https://circleci.com/developer/orbs/orb/jerus-org/zola-orb) [![GitHub License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/jerus-org/zola-orb/master/LICENSE) [![CircleCI Community](https://img.shields.io/badge/community-CircleCI%20Discuss-343434.svg)](https://discuss.circleci.com/c/ecosystem/orbs)
+[![CircleCI Build Status](https://circleci.com/gh/jerus-org/zola-orb.svg?style=shield "CircleCI Build Status")](https://circleci.com/gh/jerus-org/zola-orb) [![CircleCI Orb Version](https://badges.circleci.com/orbs/jerus-org/zola.svg)](https://circleci.com/developer/orbs/orb/jerus-org/zola-orb) [![GitHub License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/jerus-org/zola-orb/master/LICENSE) [![CircleCI Community](https://img.shields.io/badge/community-CircleCI%20Discuss-343434.svg)](https://discuss.circleci.com/c/ecosystem/orbs)
 
 Run [[Zola][getzola]] commands within a CircleCI workflow
 
