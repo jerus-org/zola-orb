@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- add output_directory parameter to specify build output directory(pr [#18])
+
 ### Security
 
 - Dependencies: update dependency shellcheck to v3.3.0(pr [#17])
@@ -64,6 +68,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [#15]: https://github.com/jerus-org/zola-orb/pull/15
 [#16]: https://github.com/jerus-org/zola-orb/pull/16
 [#17]: https://github.com/jerus-org/zola-orb/pull/17
+[#18]: https://github.com/jerus-org/zola-orb/pull/18
 [Unreleased]: https://github.com/jerus-org/zola-orb/compare/v1.1.0...HEAD
 [1.1.0]: https://github.com/jerus-org/zola-orb/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/jerus-org/zola-orb/releases/tag/v1.0.0
