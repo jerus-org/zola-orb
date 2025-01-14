@@ -47,7 +47,7 @@ steps:
       name: Build site
       command: |
         export OUTPUT_DIRECTORY=<< parameters.output_directory >>
-        include build.sh
+        <<include(scripts/build.sh)>>
 
   - when:
       condition: << parameters.list_directory >>
