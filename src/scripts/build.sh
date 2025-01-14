@@ -2,8 +2,8 @@
 
 set -e
 
-if [ "" != "${OUTPUT_DIRECTORY}" ]; then
-    zola build --output-dir "${OUTPUT_DIRECTORY}"
+if [ "" != "${OD}" ]; then
+    zola build --output-dir "${OD}"
 else
     zola build
 fi
