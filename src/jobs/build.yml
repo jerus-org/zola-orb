@@ -46,11 +46,8 @@ steps:
   - run:
       name: Build site
       command: |
-        if [[ "" != << parameters.output_directory >> ]]; then
-          zola build --output-dir /tmp/workspace/public
-        else 
-          zola build
-        fi
+        export OUTPUT_DIRECTORY=<< parameters.output_directory >>
+        include build.sh
 
   - when:
       condition: << parameters.list_directory >>
