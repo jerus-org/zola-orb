@@ -17,7 +17,7 @@ parameters:
     type: boolean
     default: false
     description: "If true, list the directory after the update."
-  output:
+  output_dir:
     type: string
     default: ""
     description: "If true, list the directory after the update."
