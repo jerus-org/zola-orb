@@ -44,10 +44,13 @@ steps:
         zola --version
 
   - run:
-      name: Build site
+      name: Export OUTPUT_DIRECTORY
       command: |
-        export OUTPUT_DIRECTORY=<< parameters.output_directory >>
-        <<include(scripts/build.sh)>>
+        echo "export OUTPUT_DIRECTORY=<< parameters.output_directory >>" >> "$BASH_ENV"
+
+  - run:
+      name: Build site
+      command: <<include(scripts/build.sh)>>
 
   - when:
       condition: << parameters.list_directory >>
