@@ -21,6 +21,22 @@ parameters:
     type: string
     default: ""
     description: "If true, list the directory after the update."
+  add_submodules:
+    type: boolean
+    default: false
+    description: "If true, add a submodule to the git repository."
+  submodule_name:
+    type: string
+    default: ""
+    description: "The name of the submodule to add."
+  submodule_source:
+    type: string
+    default: ""
+    description: "The source of the submodule to add."
+  submodule_destination:
+    type: string
+    default: ""
+    description: "The destination of the submodule to add."
 
 steps:
   - checkout
@@ -37,6 +53,14 @@ steps:
             name: Update git submodules
             command: |
               git submodule update --init
+
+  - when:
+      condition: << parameters.add_submodules >>
+      steps:
+        - run:
+            name: Add git submodule << parameters.submodule_name >>
+            command: |
+              git submodule add << parameters.submodule_source >> << parameters.submodule_destination >>
 
   - run:
       name: Confirm zola version
