@@ -2,21 +2,20 @@ description: >
   Build public site using zola.
 
 parameters:
-  submodule_name:
+  name:
     type: string
     default: ""
     description: "The name of the submodule to add."
-  submodule_source:
+  src:
     type: string
     default: ""
-    description: "The source of the submodule to add."
-  submodule_destination:
+    description: "The src of the submodule to add."
+  dest:
     type: string
     default: ""
     description: "The destination of the submodule to add."
 
 steps:
   - run:
-      name: Add git submodule << parameters.submodule_name >>
-      command: |
-        git submodule add << parameters.submodule_source >> << parameters.submodule_destination >>
+      name: Add git submodule << parameters.name >>
+      command: git submodule add << parameters.src >> << parameters.dest >>
