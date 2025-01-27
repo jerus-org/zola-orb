@@ -58,7 +58,7 @@ steps:
       condition: << parameters.add_submodules >>
       steps:
         - add_submodule:
-            name: << parameters.submodule_name >>
+            module: << parameters.submodule_name >>
             src: << parameters.submodule_source >>
             dest: << parameters.submodule_destination >>
 

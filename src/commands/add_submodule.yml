@@ -2,7 +2,7 @@ description: >
   Build public site using zola.
 
 parameters:
-  name:
+  module:
     type: string
     default: ""
     description: "The name of the submodule to add."
