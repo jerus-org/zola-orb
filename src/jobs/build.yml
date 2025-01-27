@@ -57,9 +57,10 @@ steps:
   - when:
       condition: << parameters.add_submodules >>
       steps:
-        - run:
-            name: Add git submodule << parameters.submodule_name >>
-            command: git submodule add << parameters.submodule_source >> << parameters.submodule_destination >>
+        - add_submodule:
+            submodule_name: << parameters.submodule_name >>
+            submodule_source: << parameters.submodule_source >>
+            submodule_destination: << parameters.submodule_destination >>
 
   - run:
       name: Confirm zola version
