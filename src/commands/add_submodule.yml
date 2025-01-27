@@ -17,5 +17,5 @@ parameters:
 
 steps:
   - run:
-      name: Add git submodule << parameters.name >>
+      name: Add git submodule << parameters.module >>
       command: git submodule add << parameters.src >> << parameters.dest >>
