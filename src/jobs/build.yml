@@ -17,6 +17,10 @@ parameters:
     type: boolean
     default: false
     description: "If true, list the directory after the update."
+  check_links:
+    type: boolean
+    default: true
+    description: "If true, check the links after the build."
   output_dir:
     type: string
     default: ""
@@ -76,10 +80,13 @@ steps:
       name: Build site
       command: <<include(scripts/build.sh)>>
 
-  - run:
-      name: Check internal and external links
-      command: |
-        zola check
+  - when:
+      condition: << parameters.check_links >>
+      steps:
+        - run:
+            name: Check internal and external links
+            command: |
+              zola check
 
   - when:
       condition: << parameters.list_directory >>
