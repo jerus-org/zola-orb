@@ -3,7 +3,7 @@ setup: true
 parameters:
   min-rust-version:
     type: string
-    default: "1.61"
+    default: "1.85"
   fingerprint:
     type: string
     default: SHA256:OkxsH8Z6Iim6WDJBaII9eTT9aaO1f3eDc6IpsgYYPVg
@@ -26,7 +26,7 @@ parameters:
 orbs:
   orb-tools: circleci/orb-tools@12.3.1
   shellcheck: circleci/shellcheck@3.4.0
-  toolkit: jerus-org/circleci-toolkit@2.0.13
+  toolkit: jerus-org/circleci-toolkit@2.12.1
 
 filters: &filters
   tags:
