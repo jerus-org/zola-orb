@@ -39,7 +39,7 @@ parameters:
     description: "If true, the success pipeline will be executed."
   min_rust_version:
     type: string
-    default: "1.65"
+    default: "1.85"
     description: "The minimum version of the rust compiler to use"
   release-flag:
     type: boolean
