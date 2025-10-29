@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Dependencies: update dependency toolkit to v2.13.5(pr [#36])
 - Dependencies: update dependency toolkit to v2.15.0(pr [#37])
 - Dependencies: update dependency toolkit to v2.15.1(pr [#38])
+- Dependencies: update dependency toolkit to v2.16.0(pr [#39])
 
 ## [1.2.3] - 2025-02-12
 
@@ -126,6 +127,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [#36]: https://github.com/jerus-org/zola-orb/pull/36
 [#37]: https://github.com/jerus-org/zola-orb/pull/37
 [#38]: https://github.com/jerus-org/zola-orb/pull/38
+[#39]: https://github.com/jerus-org/zola-orb/pull/39
 [Unreleased]: https://github.com/jerus-org/zola-orb/compare/v1.2.3...HEAD
 [1.2.3]: https://github.com/jerus-org/zola-orb/compare/v1.2.2...v1.2.3
 [1.2.2]: https://github.com/jerus-org/zola-orb/compare/v1.2.1...v1.2.2
