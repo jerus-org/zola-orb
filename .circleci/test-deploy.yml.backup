@@ -1,0 +1,92 @@
+version: 2.1
+orbs:
+  # Your orb will be automatically injected here during the pipeline.
+  # Reference your orb's jobs and commands below as they will exist when built.
+  orb-tools: circleci/orb-tools@12.3.1
+  toolkit: jerus-org/circleci-toolkit@4.0.1
+  # The orb definition is intentionally not included here. It will be injected into the pipeline.
+  zola-orb: {}
+
+# Use this tag to ensure test jobs always run,
+# even though the downstream publish job will only run on release tags.
+filters: &filters
+  tags:
+    only: /.*/
+
+# Filter for non-main branches only tags.
+no-main-filters: &no-main-filters
+  branches:
+    ignore: /main/
+
+# Filter for release tags.
+release-filters: &release-filters
+  branches:
+    ignore: /.*/
+  tags:
+    only: /^v[0-9]+\.[0-9]+\.[0-9]+$/
+
+parameters:
+  fingerprint:
+    type: string
+    default: SHA256:OkxsH8Z6Iim6WDJBaII9eTT9aaO1f3eDc6IpsgYYPVg
+  validation-flag:
+    type: boolean
+    default: false
+    description: "If true, the validation pipeline will be executed."
+  success-flag:
+    type: boolean
+    default: false
+    description: "If true, the success pipeline will be executed."
+  min_rust_version:
+    type: string
+    default: "1.85"
+    description: "The minimum version of the rust compiler to use"
+  release-flag:
+    type: boolean
+    default: false
+    description: "If true, the release pipeline will be executed."
+  pcu-verbosity:
+    type: string
+    default: "-vvvv"
+    description: "The verbosity of the pcu command"
+
+jobs:
+  # Create jobs to test the commands of your orbs.
+  # You may want to add additional validation steps to ensure the commands are working as expected.
+  command-test:
+    docker:
+      - image: cimg/base:current
+    steps:
+      - checkout
+      # Run your orb's commands to validate them.
+workflows:
+  test-deploy:
+    jobs:
+      # Make sure to include "filters: *filters" in every test job you want to run as part of your deployment.
+      # Test your orb's commands in a custom job and test your orb's jobs directly as a part of this workflow.
+      - command-test:
+          filters: *filters
+      - toolkit/update_changelog:
+          filters: *no-main-filters
+          requires:
+            - command-test
+          context:
+            - bot-check
+            - release
+          ssh_fingerprint: << pipeline.parameters.fingerprint >>
+          min_rust_version: << pipeline.parameters.min_rust_version >>
+
+      # The orb must be re-packed for publishing, and saved to the workspace.
+
+      - orb-tools/pack:
+          filters: *release-filters
+      - orb-tools/publish:
+          orb_name: jerus-org/zola
+          vcs_type: github
+          pub_type: production
+          # Ensure this job requires all test jobs and the pack job.
+          requires:
+            - orb-tools/pack
+            - command-test
+          context: orb-publishing
+          filters: *release-filters

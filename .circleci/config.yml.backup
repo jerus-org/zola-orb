@@ -1,0 +1,124 @@
+version: 2.1
+setup: true
+parameters:
+  min-rust-version:
+    type: string
+    default: "1.85"
+  fingerprint:
+    type: string
+    default: SHA256:OkxsH8Z6Iim6WDJBaII9eTT9aaO1f3eDc6IpsgYYPVg
+  validation-flag:
+    type: boolean
+    default: false
+    description: "If true, the validation pipeline will be executed."
+  success-flag:
+    type: boolean
+    default: false
+    description: "If true, the success pipeline will be executed."
+  release-flag:
+    type: boolean
+    default: false
+    description: "If true, the release pipeline will be executed."
+  pcu-verbosity:
+    type: string
+    default: "-vvvv"
+    description: "The verbosity of the pcu command"
+orbs:
+  orb-tools: circleci/orb-tools@12.3.1
+  shellcheck: circleci/shellcheck@3.4.0
+  toolkit: jerus-org/circleci-toolkit@4.0.1
+
+filters: &filters
+  tags:
+    only: /.*/
+
+branch-filters: &branch-filters
+  branches:
+    ignore: /main/
+
+workflows:
+  lint-pack:
+    when:
+      or:
+        - not:
+            equal: ["", << pipeline.git.tag >>]
+        - and:
+            - equal: [main, << pipeline.git.branch >>]
+            - not: << pipeline.parameters.success-flag >>
+            - not: << pipeline.parameters.release-flag >>
+        - and:
+            - not: << pipeline.parameters.success-flag >>
+            - not: << pipeline.parameters.release-flag >>
+            - << pipeline.parameters.validation-flag >>
+    jobs:
+      - orb-tools/lint:
+          filters: *filters
+      - orb-tools/pack:
+          filters: *filters
+      - orb-tools/review:
+          orb_name: zola
+          filters: *filters
+      - shellcheck/check:
+          filters: *filters
+      # Triggers the next workflow in the Orb Development Kit.
+      - orb-tools/continue:
+          pipeline_number: << pipeline.number >>
+          vcs_type: github
+          orb_name: zola
+          requires:
+            [orb-tools/lint, orb-tools/pack, orb-tools/review, shellcheck/check]
+          filters: *filters
+
+  check_last_commit:
+    when:
+      and:
+        - not: << pipeline.parameters.release-flag >>
+        - not: << pipeline.parameters.success-flag >>
+        - not: << pipeline.parameters.validation-flag >>
+
+    jobs:
+      - toolkit/choose_pipeline:
+          name: choose pipeline based on committer
+          context: bot-check
+          filters: *branch-filters
+
+  on_success:
+    when:
+      and:
+        - not: << pipeline.parameters.release-flag >>
+        - << pipeline.parameters.success-flag >>
+        - not: << pipeline.parameters.validation-flag >>
+
+    jobs:
+      - toolkit/end_success:
+          filters: *branch-filters
+
+  release:
+    when:
+      and:
+        - equal: [true, << pipeline.parameters.release-flag >>]
+        - not: << pipeline.parameters.success-flag >>
+        - not: << pipeline.parameters.validation-flag >>
+    jobs:
+      - toolkit/save_next_version:
+          min_rust_version: << pipeline.parameters.min-rust-version >>
+
+      - toolkit/make_release:
+          min_rust_version: << pipeline.parameters.min-rust-version >>
+          requires:
+            - toolkit/save_next_version
+          context:
+            - release
+            - bot-check
+            - pcu-app
+          ssh_fingerprint: << pipeline.parameters.fingerprint >>
+          when_github_release: true
+          when_cargo_release: false
+          pcu_update_changelog: true
+          pcu_verbosity: << pipeline.parameters.pcu-verbosity >>
+
+      - toolkit/no_release:
+          min_rust_version: << pipeline.parameters.min-rust-version >>
+          requires:
+            - toolkit/save_next_version:
+                - failed
