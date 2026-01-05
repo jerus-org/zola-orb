@@ -1,25 +1,25 @@
 version: 2.1
 setup: true
 parameters:
-  min-rust-version:
+  min_rust_version:
     type: string
     default: "1.85"
   fingerprint:
     type: string
     default: SHA256:OkxsH8Z6Iim6WDJBaII9eTT9aaO1f3eDc6IpsgYYPVg
-  validation-flag:
+  validation_flag:
     type: boolean
     default: false
     description: "If true, the validation pipeline will be executed."
-  success-flag:
+  success_flag:
     type: boolean
     default: false
     description: "If true, the success pipeline will be executed."
-  release-flag:
+  release_flag:
     type: boolean
     default: false
     description: "If true, the release pipeline will be executed."
-  pcu-verbosity:
+  pcu_verbosity:
     type: string
     default: "-vvvv"
     description: "The verbosity of the pcu command"
@@ -44,12 +44,12 @@ workflows:
             equal: ["", << pipeline.git.tag >>]
         - and:
             - equal: [main, << pipeline.git.branch >>]
-            - not: << pipeline.parameters.success-flag >>
-            - not: << pipeline.parameters.release-flag >>
+            - not: << pipeline.parameters.success_flag >>
+            - not: << pipeline.parameters.release_flag >>
         - and:
-            - not: << pipeline.parameters.success-flag >>
-            - not: << pipeline.parameters.release-flag >>
-            - << pipeline.parameters.validation-flag >>
+            - not: << pipeline.parameters.success_flag >>
+            - not: << pipeline.parameters.release_flag >>
+            - << pipeline.parameters.validation_flag >>
     jobs:
       - orb-tools/lint:
           filters: *filters
@@ -72,9 +72,9 @@ workflows:
   check_last_commit:
     when:
       and:
-        - not: << pipeline.parameters.release-flag >>
-        - not: << pipeline.parameters.success-flag >>
-        - not: << pipeline.parameters.validation-flag >>
+        - not: << pipeline.parameters.release_flag >>
+        - not: << pipeline.parameters.success_flag >>
+        - not: << pipeline.parameters.validation_flag >>
 
     jobs:
       - toolkit/choose_pipeline:
@@ -85,9 +85,9 @@ workflows:
   on_success:
     when:
       and:
-        - not: << pipeline.parameters.release-flag >>
-        - << pipeline.parameters.success-flag >>
-        - not: << pipeline.parameters.validation-flag >>
+        - not: << pipeline.parameters.release_flag >>
+        - << pipeline.parameters.success_flag >>
+        - not: << pipeline.parameters.validation_flag >>
 
     jobs:
       - toolkit/end_success:
@@ -96,15 +96,15 @@ workflows:
   release:
     when:
       and:
-        - equal: [true, << pipeline.parameters.release-flag >>]
-        - not: << pipeline.parameters.success-flag >>
-        - not: << pipeline.parameters.validation-flag >>
+        - equal: [true, << pipeline.parameters.release_flag >>]
+        - not: << pipeline.parameters.success_flag >>
+        - not: << pipeline.parameters.validation_flag >>
     jobs:
       - toolkit/save_next_version:
-          min_rust_version: << pipeline.parameters.min-rust-version >>
+          min_rust_version: << pipeline.parameters.min_rust_version >>
 
       - toolkit/make_release:
-          min_rust_version: << pipeline.parameters.min-rust-version >>
+          min_rust_version: << pipeline.parameters.min_rust_version >>
           requires:
             - toolkit/save_next_version
           context:
@@ -115,10 +115,10 @@ workflows:
           when_github_release: true
           when_cargo_release: false
           pcu_update_changelog: true
-          pcu_verbosity: << pipeline.parameters.pcu-verbosity >>
+          pcu_verbosity: << pipeline.parameters.pcu_verbosity >>
 
       - toolkit/no_release:
-          min_rust_version: << pipeline.parameters.min-rust-version >>
+          min_rust_version: << pipeline.parameters.min_rust_version >>
           requires:
             - toolkit/save_next_version:
                 - failed
