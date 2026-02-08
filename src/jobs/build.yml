@@ -21,6 +21,10 @@ parameters:
     type: boolean
     default: true
     description: "If true, check the links after the build."
+  config:
+    type: string
+    default: ""
+    description: "Path to an alternate config file (e.g. config.staging.toml)"
   output_dir:
     type: string
     default: ""
@@ -77,6 +81,11 @@ steps:
         echo "export OD=<< parameters.output_dir >>" >> "$BASH_ENV"
 
   - run:
+      name: Export config environment variable
+      command: |
+        echo "export ZOLA_CONFIG=<< parameters.config >>" >> "$BASH_ENV"
+
+  - run:
       name: Build site
       command: <<include(scripts/build.sh)>>
 
@@ -85,8 +94,7 @@ steps:
       steps:
         - run:
             name: Check internal and external links
-            command: |
-              zola check
+            command: <<include(scripts/check.sh)>>
 
   - when:
       condition: << parameters.list_directory >>
