@@ -94,12 +94,7 @@ steps:
       steps:
         - run:
             name: Check internal and external links
-            command: |
-              if [ "" != "${ZOLA_CONFIG}" ]; then
-                zola --config "${ZOLA_CONFIG}" check
-              else
-                zola check
-              fi
+            command: <<include(scripts/check.sh)>>
 
   - when:
       condition: << parameters.list_directory >>
