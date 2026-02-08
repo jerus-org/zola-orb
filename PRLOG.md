@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - add config parameter to build job(pr [#44])
 
+### Fixed
+
+- 🐛 ci: correct parameter name in CircleCI config(pr [#45])
+
 ### Security
 
 - Dependencies: update dependency toolkit to v2.0.7(pr [#24])
@@ -137,6 +141,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [#42]: https://github.com/jerus-org/zola-orb/pull/42
 [#40]: https://github.com/jerus-org/zola-orb/pull/40
 [#44]: https://github.com/jerus-org/zola-orb/pull/44
+[#45]: https://github.com/jerus-org/zola-orb/pull/45
 [Unreleased]: https://github.com/jerus-org/zola-orb/compare/v1.2.3...HEAD
 [1.2.3]: https://github.com/jerus-org/zola-orb/compare/v1.2.2...v1.2.3
 [1.2.2]: https://github.com/jerus-org/zola-orb/compare/v1.2.1...v1.2.2
