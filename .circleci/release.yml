@@ -1,0 +1,33 @@
+version: 2.1
+
+# Manually triggered pipeline (configured in CircleCI project settings under
+# "Triggers"). Creates the v* GitHub release (which triggers orb-tools/publish
+# in test-deploy.yml via the release-filters tag) and updates PRLOG.md.
+
+parameters:
+  workspace_version:
+    type: string
+    default: ""
+    description: "Override workspace v* version (empty = nextsv auto-detect)"
+
+orbs:
+  toolkit: jerus-org/circleci-toolkit@6.0.0
+
+workflows:
+  release:
+    jobs:
+      - toolkit/calculate_versions:
+          name: calculate-versions
+          crates: ""
+          workspace_version_override: << pipeline.parameters.workspace_version >>
+
+      - approve-release:
+          type: approval
+          requires: [calculate-versions]
+
+      - toolkit/release_prlog:
+          requires: [approve-release]
+          context:
+            - release
+            - bot-check
+            - pcu-app
