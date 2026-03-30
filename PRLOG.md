@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- chore-migrate to 3-file CI model with toolkit 6.0.0(pr [#47])
+
 ### Security
 
 - Dependencies: update dependency toolkit to v4.7.2(pr [#46])
@@ -149,6 +153,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [#44]: https://github.com/jerus-org/zola-orb/pull/44
 [#45]: https://github.com/jerus-org/zola-orb/pull/45
 [#46]: https://github.com/jerus-org/zola-orb/pull/46
+[#47]: https://github.com/jerus-org/zola-orb/pull/47
 [Unreleased]: https://github.com/jerus-org/zola-orb/compare/v1.3.0...HEAD
 [1.3.0]: https://github.com/jerus-org/zola-orb/compare/v1.2.3...v1.3.0
 [1.2.3]: https://github.com/jerus-org/zola-orb/compare/v1.2.2...v1.2.3
