@@ -6,6 +6,7 @@ orbs:
   orb-tools: circleci/orb-tools@12.4.0
   # The orb definition is intentionally not included here. It will be injected into the pipeline.
   zola-orb: {}
+  toolkit: jerus-org/circleci-toolkit@6.1.0
 
 # Use this tag to ensure test jobs always run,
 # even though the downstream publish job will only run on release tags.
@@ -38,6 +39,23 @@ workflows:
 
       # The orb must be re-packed for publishing, and saved to the workspace.
       - orb-tools/pack:
+          filters: *release-filters
+
+      # Generate MCP server binary and attach to the GitHub release.
+      - toolkit/build_mcp_server:
+          name: generate-mcp-server
+          orb_name: zola-orb
+          binary_name: zola_orb_mcp
+          version: << pipeline.git.tag >>
+          release_tag: << pipeline.git.tag >>
+          prime_history: true
+          prime_earliest_version: "1.0.0"
+          context:
+            - bot-check
+            - release
+            - pcu_app
+          requires:
+            - command-test
           filters: *release-filters
 
       - orb-tools/publish:
