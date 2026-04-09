@@ -53,7 +53,7 @@ workflows:
           context:
             - bot-check
             - release
-            - pcu_app
+            - pcu-app
           requires:
             - command-test
           filters: *release-filters
