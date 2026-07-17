@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Security
 
 - Dependencies: update dependency toolkit to v6.2.0(pr [#49])
+- Dependencies: update dependency toolkit to v6.6.1(pr [#50])
 
 ## [1.3.1] - 2026-03-30
 
@@ -166,6 +167,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [#47]: https://github.com/jerus-org/zola-orb/pull/47
 [#48]: https://github.com/jerus-org/zola-orb/pull/48
 [#49]: https://github.com/jerus-org/zola-orb/pull/49
+[#50]: https://github.com/jerus-org/zola-orb/pull/50
 [Unreleased]: https://github.com/jerus-org/zola-orb/compare/v1.3.1...HEAD
 [1.3.1]: https://github.com/jerus-org/zola-orb/compare/v1.3.0...v1.3.1
 [1.3.0]: https://github.com/jerus-org/zola-orb/compare/v1.2.3...v1.3.0
