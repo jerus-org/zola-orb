@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - ci-add generate-mcp-server job to release pipeline(pr [#48])
+- ci-migrate MCP build to gen-orb-mcp orb(pr [#51])
 
 ### Security
 
@@ -168,6 +169,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [#48]: https://github.com/jerus-org/zola-orb/pull/48
 [#49]: https://github.com/jerus-org/zola-orb/pull/49
 [#50]: https://github.com/jerus-org/zola-orb/pull/50
+[#51]: https://github.com/jerus-org/zola-orb/pull/51
 [Unreleased]: https://github.com/jerus-org/zola-orb/compare/v1.3.1...HEAD
 [1.3.1]: https://github.com/jerus-org/zola-orb/compare/v1.3.0...v1.3.1
 [1.3.0]: https://github.com/jerus-org/zola-orb/compare/v1.2.3...v1.3.0
