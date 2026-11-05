@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Dependencies: update dependency toolkit to v8(pr [#58])
 - Dependencies: update dependency gen-orb-mcp to v0.2.5(pr [#57])
+- Dependencies: update dependency gen-orb-mcp to v0.2.6(pr [#59])
 
 ## [1.3.2] - 2026-09-05
 
@@ -189,6 +190,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [#56]: https://github.com/jerus-org/zola-orb/pull/56
 [#58]: https://github.com/jerus-org/zola-orb/pull/58
 [#57]: https://github.com/jerus-org/zola-orb/pull/57
+[#59]: https://github.com/jerus-org/zola-orb/pull/59
 [Unreleased]: https://github.com/jerus-org/zola-orb/compare/v1.3.2...HEAD
 [1.3.2]: https://github.com/jerus-org/zola-orb/compare/v1.3.1...v1.3.2
 [1.3.1]: https://github.com/jerus-org/zola-orb/compare/v1.3.0...v1.3.1
